@@ -13,7 +13,14 @@ function addBook(author, title, pages, read) {
     myLibrary.push(book);
 }
 
-console.log(myLibrary);
+function showBooks(library) {
+    library.forEach(element => {
+        console.log(element);
+    });
+}
 
 addBook("Tolkien", "The Lord of the Rings", 300, true);
+addBook("Lovecraft", "The Call of Cthulu", 200, false);
+addBook("Hammond", "Jurassic Park", 150, false);
 
+showBooks(myLibrary);
