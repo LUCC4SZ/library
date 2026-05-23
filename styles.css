@@ -1,4 +1,14 @@
+/* Universal styles */
+
 * {
     margin: 0;
     padding: 0;
+}
+
+/* Shelf styles */
+
+.shelf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
