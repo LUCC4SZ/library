@@ -9,12 +9,26 @@ function Book(author, title, pages, read, id) {
 }
 
 function addBook(author, title, pages, read) {
-    let book = new Book(author, title, pages, read, crypto.randomUUID());
+    const book = new Book(author, title, pages, read, crypto.randomUUID());
     myLibrary.push(book);
 }
 
+function createBookCard(book) {
+    const bookInfo = document.createElement("div");
+    for (let key in book) {
+        const info = document.createElement("p");
+        info.innerText = `${book[key]}`;
+        bookInfo.appendChild(info);
+    }
+    return bookInfo;
+}
+
 function showBooks(library) {
+    const shelf = document.getElementById("shelf");
     library.forEach(element => {
+        const card = document.createElement("div");
+        card.appendChild(createBookCard(element));
+        shelf.appendChild(card);
         console.log(element);
     });
 }
