@@ -38,3 +38,17 @@ addBook("Lovecraft", "The Call of Cthulu", 200, false);
 addBook("Hammond", "Jurassic Park", 150, false);
 
 showBooks(myLibrary);
+
+
+const showButton = document.getElementById("show-dialog");
+const addDialog = document.getElementById("add-book");
+const confirmBtn = addDialog.querySelector("#confirm-btn");
+
+showButton.addEventListener("click", () => {
+    addDialog.showModal();
+})
+
+confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    addDialog.close();
+})
