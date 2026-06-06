@@ -23,14 +23,26 @@ function createBookCard(book) {
     return bookInfo;
 }
 
+const shelf = document.getElementById("shelf");
+
 function showBooks(library) {
-    const shelf = document.getElementById("shelf");
     library.forEach(element => {
         const card = document.createElement("div");
         card.appendChild(createBookCard(element));
         shelf.appendChild(card);
-        console.log(element);
     });
+}
+
+function cleanShelf(library) {
+    library.forEach(element => {
+        shelf.removeChild(element);
+    })
+}
+
+function updateShelf(library) {
+    const card = document.createElement("div");
+    card.appendChild(createBookCard(library.pop()));
+    shelf.appendChild(card);
 }
 
 addBook("Tolkien", "The Lord of the Rings", 300, true);
@@ -39,16 +51,30 @@ addBook("Hammond", "Jurassic Park", 150, false);
 
 showBooks(myLibrary);
 
-
 const showButton = document.getElementById("show-dialog");
-const addDialog = document.getElementById("add-book");
-const confirmBtn = addDialog.querySelector("#confirm-btn");
+const dialog = document.getElementById("dialog");
+const inputAuthor = dialog.querySelector("#author-name");
+const inputTitle = dialog.querySelector("#book-title");
+const inputPages = dialog.querySelector("#pages-number");
+const inputRead = dialog.querySelector("#read");
+const confirmBtn = dialog.querySelector("#confirm-btn");
 
 showButton.addEventListener("click", () => {
-    addDialog.showModal();
+    dialog.showModal();
+})
+
+dialog.addEventListener("close", (e) => {
+    let readBook;
+    if (inputRead.value === "yes") {
+        readBook = true;
+    } else {
+        readBook = false;
+    }
+    addBook(inputAuthor.value, inputTitle.value, inputPages.value, readBook);
+    updateShelf(myLibrary);
 })
 
 confirmBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    addDialog.close();
+    dialog.close();
 })
