@@ -9,7 +9,7 @@
 <body>
     <div id="shelf" class="shelf" style="border: 1px solid black"></div>
     <button id="show-dialog">Add book</button>
-    <dialog id="add-book">
+    <dialog id="dialog">
         <p>Add a book to the shelf.</p>
         <form>
             <label for="author-name">Write the name of the author</label>
@@ -19,12 +19,11 @@
             <label for="pages-number">Write the number of pages the book has</label>
             <input type="number" id="pages-number">
             <label for="read">Have you read the book?</label>
-            <input type="radio" name="answer" id="read">Yes
-            <input type="radio" name="answer" id="read">No
+            <input type="radio" name="answer" id="read" value="yes">Yes
+            <input type="radio" name="answer" id="read" value="no">No
             <button value="cancel" formmethod="dialog">Cancel</button>
             <button value="default" id="confirm-btn">Confirm</button>
         </form>
-        <button commandfor="add-book" command="close">Close</button>
     </dialog>
     <script src="script.js"></script>
 </body>
