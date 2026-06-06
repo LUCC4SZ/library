@@ -12,3 +12,8 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+label,
+input {
+    display: block;
+}
