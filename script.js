@@ -56,20 +56,25 @@ const dialog = document.getElementById("dialog");
 const inputAuthor = dialog.querySelector("#author-name");
 const inputTitle = dialog.querySelector("#book-title");
 const inputPages = dialog.querySelector("#pages-number");
-const inputRead = dialog.querySelector("#read");
+const inputReadYes = dialog.querySelector("#yes-btn");
+const inputReadNo = dialog.querySelector("#no-btn");
 const confirmBtn = dialog.querySelector("#confirm-btn");
+
+let readBook;
+
+inputReadYes.addEventListener("click", () => {
+    readBook = true;
+})
+
+inputReadNo.addEventListener("click", () => {
+    readBook = false;
+})
 
 showButton.addEventListener("click", () => {
     dialog.showModal();
 })
 
 dialog.addEventListener("close", (e) => {
-    let readBook;
-    if (inputRead.value === "yes") {
-        readBook = true;
-    } else {
-        readBook = false;
-    }
     addBook(inputAuthor.value, inputTitle.value, inputPages.value, readBook);
     updateShelf(myLibrary);
 })
