@@ -71,15 +71,13 @@ inputReadNo.addEventListener("click", () => {
 })
 
 showButton.addEventListener("click", () => {
+    dialog.returnValue = "";
     dialog.showModal();
-})
-
-dialog.addEventListener("close", (e) => {
-    addBook(inputAuthor.value, inputTitle.value, inputPages.value, readBook);
-    updateShelf(myLibrary);
 })
 
 confirmBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    addBook(inputAuthor.value, inputTitle.value, inputPages.value, readBook);
+    updateShelf(myLibrary);
     dialog.close();
 })
