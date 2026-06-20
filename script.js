@@ -20,6 +20,9 @@ function createBookCard(book) {
         info.innerText = `${book[key]}`;
         bookInfo.appendChild(info);
     }
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove Book";
+    bookInfo.appendChild(removeButton);
     return bookInfo;
 }
 
@@ -31,12 +34,6 @@ function showBooks(library) {
         card.appendChild(createBookCard(element));
         shelf.appendChild(card);
     });
-}
-
-function cleanShelf(library) {
-    library.forEach(element => {
-        shelf.removeChild(element);
-    })
 }
 
 function updateShelf(library) {
