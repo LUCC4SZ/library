@@ -9,7 +9,9 @@ function Book(author, title, pages, read, id) {
 }
 
 Book.prototype.changeReadStatus = function() {
+    console.log(this.read);
     this.read = !this.read;
+    console.log(this.read);
 }
 
 function addBook(author, title, pages, read) {
@@ -20,8 +22,20 @@ function addBook(author, title, pages, read) {
 function createBookCard(book) {
     const bookInfo = document.createElement("div");
     for (let key in book) {
-        // const info = document.createElement("p");
+        const info = document.createElement("p");
         switch (key) {
+            case "author":
+                info.innerText = `Author: ${book[key]}`;
+                bookInfo.appendChild(info);
+                break;
+            case "title":
+                info.innerText = `Title: ${book[key]}`;
+                bookInfo.appendChild(info);
+                break;
+            case "pages":
+                info.innerText = `Number of pages: ${book[key]}`;
+                bookInfo.appendChild(info);
+                break;
             case "id":
                 const data = document.createAttribute("data-id");
                 bookInfo.setAttribute("data-id", book[key]);
@@ -35,13 +49,8 @@ function createBookCard(book) {
             case "read":
                 const changeRead = document.createElement("button");
                 changeRead.innerText = "Change read status";
-                changeRead.addEventListener("click", Book.prototype.changeReadStatus());
+                changeRead.addEventListener("click", () => Book.prototype.changeReadStatus());
                 bookInfo.appendChild(changeRead);
-                break;
-            default:
-                const info = document.createElement("p");
-                info.innerText = `${book[key]}`;
-                bookInfo.appendChild(info);
                 break;
         }
     }
@@ -70,9 +79,9 @@ function removeFromShelf(id) {
     }
 }
 
-addBook("Tolkien", "The Lord of the Rings", 300, true);
+addBook("Tolkien", "The Lord of the Rings: The Fellowship of the Ring", 547, true);
 addBook("Lovecraft", "The Call of Cthulu", 200, false);
-addBook("Hammond", "Jurassic Park", 150, false);
+addBook("Crichton", "Jurassic Park", 400, false);
 
 showBooks(myLibrary);
 
