@@ -20,14 +20,40 @@ button {
     display: block;
 }
 
+
+
+button {
+    background-color: white;
+    color: rgb(0, 178, 131);
+    font-weight: bold;
+    border: 0.5em solid rgb(0, 178, 131);
+    border-radius: 2rem;
+    padding: 0.5em;
+    margin: 0.5rem;
+}
+
+button:hover {
+    background-color: lightseagreen;
+    color: rgb(0, 82, 60);
+}
+
+dialog {
+    margin: 50px auto;
+    padding: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 input[type = "radio"],
 form > button {
     display: inline;
 }
 
-button {
-    border: 0.5em solid rgb(0, 178, 131);
-    border-radius: 2rem;
-    padding: 0.5em;
-    margin: 0.5rem;
+.exit-buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
