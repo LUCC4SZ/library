@@ -9,9 +9,7 @@ function Book(author, title, pages, read, id) {
 }
 
 Book.prototype.changeReadStatus = function() {
-    console.log(this.read);
     this.read = !this.read;
-    console.log(this.read);
 }
 
 function addBook(author, title, pages, read) {
@@ -60,9 +58,7 @@ function createBookCard(book) {
 const shelf = document.getElementById("shelf");
 
 function showBooks(library) {
-    library.forEach(element => {
-        shelf.appendChild(createBookCard(element));
-    });
+    library.forEach(element => shelf.appendChild(createBookCard(element)));
 }
 
 function updateShelf(library) {
