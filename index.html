@@ -19,10 +19,14 @@
             <label for="pages-number">Write the number of pages the book has</label>
             <input type="number" id="pages-number">
             <label for="read">Have you read the book?</label>
-            <input type="radio" name="answer" id="yes-btn" value="yes">Yes
-            <input type="radio" name="answer" id="no-btn" value="no">No
-            <button value="cancel" formmethod="dialog">Cancel</button>
-            <button value="default" id="confirm-btn">Confirm</button>
+            <div>
+                <input type="radio" name="answer" id="yes-btn" value="yes">Yes
+                <input type="radio" name="answer" id="no-btn" value="no">No
+            </div>
+            <div class="exit-buttons">
+                <button value="default" id="confirm-btn">Confirm</button>
+                <button value="cancel" formmethod="dialog">Cancel</button>
+            </div>
         </form>
     </dialog>
     <script src="script.js"></script>
