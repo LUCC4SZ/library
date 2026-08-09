@@ -19,6 +19,7 @@ function addBook(author, title, pages, read) {
 
 function createBookCard(book) {
     const bookInfo = document.createElement("div");
+    bookInfo.className = "book-info";
     for (let key in book) {
         const info = document.createElement("p");
         switch (key) {
