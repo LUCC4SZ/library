@@ -27,6 +27,14 @@ button {
     width: 500px;
 }
 
+.read-book {
+    background-color: green;
+}
+
+.not-read-book {
+    background-color: red;
+}
+
 button {
     background-color: white;
     color: rgb(0, 178, 131);
@@ -45,6 +53,10 @@ button:hover {
 dialog {
     margin: 50px auto;
     padding: 32px;
+}
+
+dialog p {
+    font-weight: bold;
 }
 
 form {
