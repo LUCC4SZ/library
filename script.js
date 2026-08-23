@@ -46,6 +46,11 @@ function createBookCard(book) {
                 bookInfo.appendChild(removeButton);
                 break;
             case "read":
+                if (book[key]) {
+                    bookInfo.className += " read-book";
+                } else {
+                    bookInfo.className += " not-read-book";
+                };
                 const changeRead = document.createElement("button");
                 changeRead.innerText = "Change read status";
                 changeRead.addEventListener("click", () => Book.prototype.changeReadStatus());
