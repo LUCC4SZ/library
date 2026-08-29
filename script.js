@@ -8,8 +8,19 @@ function Book(author, title, pages, read, id) {
     this.id = id;
 }
 
-Book.prototype.changeReadStatus = function() {
+Book.prototype.changeReadStatus = function(bookInfo) {
     this.read = !this.read;
+    let classes = bookInfo.className.split(" ");
+    bookInfo.className = "";
+    if (this.read) {
+        classes[1] = "read-book";
+    } else {
+        classes[1] = "not-read-book";
+    }
+    for (let i = 0; i < classes.length; i++) {
+        bookInfo.className += classes[i];
+        bookInfo.className += " ";
+    };
 }
 
 function addBook(author, title, pages, read) {
@@ -53,7 +64,7 @@ function createBookCard(book) {
                 };
                 const changeRead = document.createElement("button");
                 changeRead.innerText = "Change read status";
-                changeRead.addEventListener("click", () => Book.prototype.changeReadStatus());
+                changeRead.addEventListener("click", () => Book.prototype.changeReadStatus(bookInfo));
                 bookInfo.appendChild(changeRead);
                 break;
         }
