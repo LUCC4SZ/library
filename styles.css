@@ -9,8 +9,8 @@
 /* Shelf styles */
 
 .shelf {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, max(200px, 50%));
     justify-content: space-around;
 }
 
