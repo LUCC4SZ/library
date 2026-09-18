@@ -11,6 +11,7 @@
 .shelf {
     display: grid;
     grid-template-columns: repeat(2, max(200px, 50%));
+    gap: 8px;
     justify-content: space-around;
 }
 
