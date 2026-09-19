@@ -9,8 +9,9 @@
 /* Shelf styles */
 
 .shelf {
+    padding: 8px;
     display: grid;
-    grid-template-columns: repeat(2, max(200px, 50%));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 8px;
     justify-content: space-around;
 }
