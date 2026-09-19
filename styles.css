@@ -50,6 +50,10 @@ button {
     margin: 0.5rem;
 }
 
+.add-book {
+    margin: 8px auto;
+}
+
 button:hover {
     background-color: rgb(164, 166, 166);
     color: rgb(42, 43, 42);
